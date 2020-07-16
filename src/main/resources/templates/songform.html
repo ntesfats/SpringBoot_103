@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Load Form</title>
+</head>
+<body>
+    <h1>Adding new Song</h1>
+<!--songform page: use radio buttons and/or checkboxes for rating and genre-->
+    <form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+        Name: <input type="text" th:field="*{name}"> <br>
+        Artist: <input type="text" th:field="*{artist}"> <br>
+        Album: <input type="text" th:field="*{album}"> <br>
+        Rating: <input type="number" th:field="*{rating}"> <br>
+        Year: <input type="number" th:field="*{year}"> <br>
+
+
+        Genre: <br>
+            <input type="radio" th:field="*{genre}" value="Jazz"> Jazz <br>
+            <input type="radio" th:field="*{genre}" value="Hip Hop"> Hip Hop <br>
+            <input type="radio" th:field="*{genre}" value="A&B"> A&B <br>
+            <input type="radio" th:field="*{genre}" value="Rock"> Rock <br>
+            <input type="radio" th:field="*{genre}" value="Country"> Country <br>
+            <input type="radio" th:field="*{genre}" value="Funk"> Funk <br>
+
+        Availability: <br>
+        <input type="radio" th:field="*{inStock}" value=true> in Stock <br>
+        <input type="radio" th:field="*{inStock}" value=false> not in Stock <br>
+
+
+        <input type="submit" value="Submit form!">
+
+    </form>
+</body>
+</html>

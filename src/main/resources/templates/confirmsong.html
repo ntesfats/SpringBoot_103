@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Song</title>
+</head>
+<body>
+    <h1>Confirming songs description </h1>
+    <p th:inline="text">
+        The song name was [[${song.name}]]. <br>
+        Song genre: [[${song.genre}]] <br>
+        The artist name is [[${song.artist}]]. <br>
+        The album name is [[${song.album}]]. <br>
+        The rating was [[${song.rating}]] and the year was [[${song.year}]]. <br>
+
+
+        <h3>Availability: </h3>
+        Song is
+        <span th:if="${!song.inStock}">not</span>
+        in Stock
+
+
+    </p>
+
+</body>
+</html>
